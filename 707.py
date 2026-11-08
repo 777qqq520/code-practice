@@ -1,3 +1,7 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 class MyLinkedList:
     def __init__(self):
         self.dummy_head = ListNode(0)
@@ -16,6 +20,8 @@ class MyLinkedList:
     def addAtIndex(self, index: int, val: int) -> None:
         if index < 0:
             index = 0
+        if index > self.size:
+            return    
         cur = self.dummy_head
         for _ in range(index):
             cur = cur.next
